@@ -17,7 +17,7 @@ class TestCadastroPessoaFisicaCanalTech {
 
 	static WebDriver driver;
 
-	void usuario(String nome, String dataNascimento, String cpf, String telefone, String confirmacaoTelefone,
+	void setUser(String nome, String dataNascimento, String cpf, String telefone, String confirmacaoTelefone,
 			String email, String confirmacaoEmail, String senha, String confirmacaoSenha) {
 		driver.findElement(By.id("pf_nome_cliente")).sendKeys(nome);
 		driver.findElement(By.id("pf_data_nascimento")).sendKeys(dataNascimento);
@@ -30,7 +30,7 @@ class TestCadastroPessoaFisicaCanalTech {
 		driver.findElement(By.id("senha_cliente2")).sendKeys(confirmacaoSenha);
 	}
 
-	void limparUsuario() {
+	void clearUser() {
 		driver.findElement(By.id("pf_nome_cliente")).clear();
 		driver.findElement(By.id("pf_data_nascimento")).clear();
 		driver.findElement(By.id("pf_cpf_cliente")).clear();
@@ -60,10 +60,10 @@ class TestCadastroPessoaFisicaCanalTech {
 
 	@AfterEach
 	void tearDown() throws Exception {
-		this.limparUsuario();
+		this.clearUser();
 	}
 
-	@Test
+	// @Test
 	void test() {
 	}
 
@@ -74,8 +74,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeNomeSimples() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Victor", "12/05/2000", "72097897070", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("Victor", "12/05/2000", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -91,8 +91,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeNomeNulo() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("", "12/05/2000", "72097897070", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("", "12/05/2000", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -108,8 +108,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeDataNascimentoComLetra() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "teste", "72097897070", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "1234569");
+		this.setUser("Fulano de Tal", "teste", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -123,8 +123,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeDataNascimentoIncompleta() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "0101", "72097897070", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "1234569");
+		this.setUser("Fulano de Tal", "0101", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -140,8 +140,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeDataNascimentoQueNaoExiste() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "50062000", "72097897070", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "1234569");
+		this.setUser("Fulano de Tal", "50062000", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -157,8 +157,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeDataNascimentoFutura() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01062050", "72097897070", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "1234569");
+		this.setUser("Fulano de Tal", "01062050", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -175,8 +175,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeDataNascimentoMenorDeIdade() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "18102020", "72097897070", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "1234569");
+		this.setUser("Fulano de Tal", "18102020", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -191,8 +191,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeCpfInvalido() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "00000000000", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "00000000000", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -208,8 +208,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeCpfNulo() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -225,8 +225,8 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeCpfComLetra() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "7490fa6190D", "8737999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "7490fa6190D", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -235,14 +235,14 @@ class TestCadastroPessoaFisicaCanalTech {
 
 	/*
 	 * Testando se é possível criar um usuário com o input do telefone fixo, com um
-	 * numero inválido.
+	 * número inválido.
 	 */
 	// @Test
 	void testeTelefoneFixoInvalido() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "9999999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "72097897070", "9999999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -251,12 +251,16 @@ class TestCadastroPessoaFisicaCanalTech {
 				driver.findElement(By.id("telefone_cliente_erro")).getText());
 	}
 
+	/*
+	 * Testando se é possível criar um usuário com o input do telefone fixo, com um
+	 * número incompleto.
+	 */
 	// @Test
 	void testeTelefoneFixoIncompleto() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "999999", "87981999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "72097897070", "999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -265,12 +269,16 @@ class TestCadastroPessoaFisicaCanalTech {
 				driver.findElement(By.id("telefone_cliente_erro")).getText());
 	}
 
+	/*
+	 * Testando se é possível criar um usuário com os input do telefone fixo e do
+	 * celular em branco.
+	 */
 	// @Test
 	void testeCadastroSemPassarNenhumNumeroParaContato() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "", "", "blabla@gmail.com", "blabla@gmail.com",
-				"12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "72097897070", "", "", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -279,12 +287,16 @@ class TestCadastroPessoaFisicaCanalTech {
 				driver.findElement(By.id("telefone_cliente_erro_2")).getText());
 	}
 
+	/*
+	 * Testando se é possível criar um usuário com o input do número do celular em
+	 * branco.
+	 */
 	// @Test
 	void testeTelefoneCelularNulo() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "8737999999", "", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "1234569");
+		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -293,12 +305,16 @@ class TestCadastroPessoaFisicaCanalTech {
 				driver.findElement(By.id("telefone_cliente_erro_2")).getText());
 	}
 
+	/*
+	 * Testando se é possível criar um usuário com o input do número do celular, com
+	 * um numero inválido.
+	 */
 	// @Test
 	void testeTelefoneCelularInvalido() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "8737999999", "99999999999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "99999999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -307,12 +323,16 @@ class TestCadastroPessoaFisicaCanalTech {
 				driver.findElement(By.id("telefone_cliente_erro_2")).getText());
 	}
 
-	// @Test
+	/*
+	 * Testando se é possível criar um usuário com o input do número do celular, com
+	 * um número incompleto.
+	 */
+	@Test
 	void testeTelefoneCelularIncompleto() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999", "blabla@gmail.com",
-				"blabla@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -324,41 +344,29 @@ class TestCadastroPessoaFisicaCanalTech {
 		assertTrue(blocoDeAlerta.toLowerCase().contains(procurarPor.toLowerCase()));
 	}
 
-	// @Test
-	void testeEmail() {
-		driver.findElement(By.id("PessoaFisica")).click();
-
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "873199999999", "87981999999", "blabla@a.a",
-				"blabla@a.a", "12345698", "1234569");
-
-		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
-
-		System.out.println(driver.switchTo().alert().getText());
-	}
-
-	// @Test
-	void testeEmailInvalido() {
-		driver.findElement(By.id("PessoaFisica")).click();
-
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999999", "blabla@gm.com",
-				"blabla@gm.com", "12345698", "1234569");
-
-		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
-
-		assertTrue(driver.findElement(By.cssSelector(".blocoAlerta")).isDisplayed());
-
-		String blocoDeAlerta = driver.findElement(By.cssSelector(".blocoAlerta")).getAttribute("innerText");
-		String procurarPor = "E-mail";
-
-		assertTrue(blocoDeAlerta.toLowerCase().contains(procurarPor.toLowerCase()));
-	}
-
+	/*
+	 * Testando se é possível criar um usuário com o input do e-mail em branco.
+	 */
 	// @Test
 	void testeEmailNulo() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.usuario("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999999", "", "blabla@gmail.com",
-				"12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999999", "",
+				"ts-selenium@gmail.com", "12345698", "12345698");
+
+		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
+
+		assertTrue(driver.findElement(By.id("email_cliente_erro")).isDisplayed());
+		assertEquals("Digite um endereço de e-mail válido, por favor.",
+				driver.findElement(By.id("email_cliente_erro")).getText());
+	}
+
+	// @Test
+	void testeSenhaI() {
+		driver.findElement(By.id("PessoaFisica")).click();
+
+		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999999", "",
+				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
@@ -380,7 +388,7 @@ class TestCadastroPessoaFisicaCanalTech {
 //	void testeTodosOsCamposCorreto() {
 //		driver.findElement(By.id("PessoaFisica")).click();
 //
-//		this.usuario("Fulano de Tal", "01012000", "73796018068", "8737999999", "87981999999", "testCorreto@gmail.com",
+//		this.setUser("Fulano de Tal", "01012000", "73796018068", "8737999999", "87981999999", "testCorreto@gmail.com",
 //				"testCorreto@gmail.com", "12345698", "12345698");
 //
 //		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
