@@ -63,18 +63,14 @@ class TestCadastroPessoaFisicaCanalTech {
 		this.clearUser();
 	}
 
-	// @Test
-	void test() {
-	}
-
 	/*
 	 * Testando se é possível criar um usuário com um nome simples.
 	 */
-	// @Test
+	@Test
 	void testeNomeSimples() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Victor", "12/05/2000", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano", "12/05/2000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -87,11 +83,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	/*
 	 * Testando se é possível criar um usuário com o input de nome em branco.
 	 */
-	// @Test
+	@Test
 	void testeNomeNulo() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("", "12/05/2000", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("", "12/05/2000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -104,11 +100,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	/*
 	 * Testando se é possível inserir letras no input de data.
 	 */
-	// @Test
+	@Test
 	void testeDataNascimentoComLetra() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "teste", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "teste", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -119,11 +115,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	/*
 	 * Testando se é possível criar um usuário com o input de data incompleta.
 	 */
-	// @Test
+	@Test
 	void testeDataNascimentoIncompleta() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "0101", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "0101", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -136,11 +132,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * Testando se é possível criar um usuário com o input de data, com uma data que
 	 * não existe.
 	 */
-	// @Test
+	@Test
 	void testeDataNascimentoQueNaoExiste() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "50062000", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "50062000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -153,11 +149,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * Testando se é possível criar um usuário com o input de data, com uma data
 	 * futura.
 	 */
-	// @Test
+	@Test
 	void testeDataNascimentoFutura() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01062050", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "01062050", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -171,11 +167,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * próxima da data presente, fazendo assim com que esse usuário seja menor de
 	 * idade ou até mesmo um recém-nascido.
 	 */
-	// @Test
+	@Test
 	void testeDataNascimentoMenorDeIdade() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "18102020", "72097897070", "8737999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "18102020", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -187,7 +183,7 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * Testando se é possível criar um usuário com o input do CPF, com um CPF
 	 * inválido.
 	 */
-	// @Test
+	@Test
 	void testeCpfInvalido() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
@@ -204,7 +200,7 @@ class TestCadastroPessoaFisicaCanalTech {
 	/*
 	 * Testando se é possível criar um usuário com o input do CPF em branco.
 	 */
-	// @Test
+	@Test
 	void testeCpfNulo() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
@@ -221,7 +217,7 @@ class TestCadastroPessoaFisicaCanalTech {
 	/*
 	 * Testando se é possível criar um usuário com o input do CPF contendo letras.
 	 */
-	// @Test
+	@Test
 	void testeCpfComLetra() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
@@ -237,11 +233,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * Testando se é possível criar um usuário com o input do telefone fixo, com um
 	 * número inválido.
 	 */
-	// @Test
+	@Test
 	void testeTelefoneFixoInvalido() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01012000", "72097897070", "9999999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "9999999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -255,11 +251,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * Testando se é possível criar um usuário com o input do telefone fixo, com um
 	 * número incompleto.
 	 */
-	// @Test
+	@Test
 	void testeTelefoneFixoIncompleto() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01012000", "72097897070", "999999", "87981999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "999999", "87981999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -273,11 +269,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * Testando se é possível criar um usuário com os input do telefone fixo e do
 	 * celular em branco.
 	 */
-	// @Test
+	@Test
 	void testeCadastroSemPassarNenhumNumeroParaContato() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01012000", "72097897070", "", "", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "", "", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -291,11 +287,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * Testando se é possível criar um usuário com o input do número do celular em
 	 * branco.
 	 */
-	// @Test
+	@Test
 	void testeTelefoneCelularNulo() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "1234569");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -309,11 +305,11 @@ class TestCadastroPessoaFisicaCanalTech {
 	 * Testando se é possível criar um usuário com o input do número do celular, com
 	 * um numero inválido.
 	 */
-	// @Test
+	@Test
 	void testeTelefoneCelularInvalido() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "99999999999", "ts-selenium@gmail.com",
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "99999999999", "ts-selenium@gmail.com",
 				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -331,27 +327,22 @@ class TestCadastroPessoaFisicaCanalTech {
 	void testeTelefoneCelularIncompleto() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999", "ts-selenium@gmail.com",
-				"ts-selenium@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "12345698", "12345689");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
-		assertTrue(driver.findElement(By.cssSelector(".blocoAlerta")).isDisplayed());
-
-		String blocoDeAlerta = driver.findElement(By.cssSelector(".blocoAlerta")).getAttribute("innerText");
-		String procurarPor = "Telefone Celular";
-
-		assertTrue(blocoDeAlerta.toLowerCase().contains(procurarPor.toLowerCase()));
+		assertEquals("87981999", driver.findElement(By.id("telefone_cliente_2")).getText());
 	}
 
 	/*
 	 * Testando se é possível criar um usuário com o input do e-mail em branco.
 	 */
-	// @Test
+	@Test
 	void testeEmailNulo() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999999", "",
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "",
 				"ts-selenium@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
@@ -361,21 +352,155 @@ class TestCadastroPessoaFisicaCanalTech {
 				driver.findElement(By.id("email_cliente_erro")).getText());
 	}
 
-	// @Test
-	void testeSenhaI() {
+	/*
+	 * Testando se é possível criar um usuário com o input do e-mail em branco.
+	 */
+	@Test
+	void testeEmailsDiferentes() {
 		driver.findElement(By.id("PessoaFisica")).click();
 
-		this.setUser("Fulano de Tal", "01012000", "72097897070", "8737999999", "87981999999", "",
-				"ts-selenium@gmail.com", "12345698", "12345698");
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-seleniu@gmail.com", "12345698", "12345698");
 
 		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
 
-		assertTrue(driver.findElement(By.cssSelector(".blocoAlerta")).isDisplayed());
+		assertTrue(driver.findElement(By.id("email_cliente2_erro")).isDisplayed());
+		assertEquals("A confirmação de e-mail está diferente do e-mail digitado. Por favor, digite-os novamente.",
+				driver.findElement(By.id("email_cliente2_erro")).getText());
+	}
 
-		String blocoDeAlerta = driver.findElement(By.cssSelector(".blocoAlerta")).getAttribute("innerText");
-		String procurarPor = "Telefone Celular";
+	/*
+	 * Testando se é possível criar um usuário com o input de senha em branco.
+	 */
+	@Test
+	void testeSenhaNula() {
+		driver.findElement(By.id("PessoaFisica")).click();
 
-		assertTrue(blocoDeAlerta.toLowerCase().contains(procurarPor.toLowerCase()));
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "", "");
+
+		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
+
+		assertTrue(driver.findElement(By.id("senha_cliente_erro")).isDisplayed());
+		assertEquals("Escolha uma senha para seu cadastro", driver.findElement(By.id("senha_cliente_erro")).getText());
+	}
+
+	/*
+	 * Testando se é possível criar um usuário com o input de confirmação de senha
+	 * em branco.
+	 */
+	@Test
+	void testeSenhaDeConfirmacaoNula() {
+		driver.findElement(By.id("PessoaFisica")).click();
+
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "123456798", "");
+
+		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
+
+		assertTrue(driver.findElement(By.id("senha_cliente2_erro")).isDisplayed());
+		assertEquals("Repita a Senha", driver.findElement(By.id("senha_cliente2_erro")).getText());
+	}
+
+	/*
+	 * Testando se é possível criar um usuário com o input de confirmação senha
+	 * diferente do input de senha.
+	 */
+	@Test
+	void testeSenhaDeConfirmacaoDiferente() {
+		driver.findElement(By.id("PessoaFisica")).click();
+
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "123456798", "123456789");
+
+		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
+
+		assertTrue(driver.findElement(By.id("senha_cliente2_erro")).isDisplayed());
+		assertEquals("Sua senha está diferente da confirmação. Por favor, digite-as novamente.",
+				driver.findElement(By.id("senha_cliente2_erro")).getText());
+	}
+
+	/*
+	 * Testando se o nivel de senha aponta baixo para uma senha simples.
+	 */
+	@Test
+	void testeSenhaBaixa() {
+		driver.findElement(By.id("PessoaFisica")).click();
+
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "123456", "123456");
+
+		assertTrue(driver.findElement(By.id("seguranca_senha")).isDisplayed());
+
+		String nivelSenha = driver.findElement(By.id("seguranca_senha")).getAttribute("innerText");
+		String procurarPor = "Baixa";
+
+		assertTrue(nivelSenha.toLowerCase().contains(procurarPor.toLowerCase()));
+	}
+
+	/*
+	 * Testando se o nivel de senha aponta médio para uma senha média.
+	 */
+	@Test
+	void testeSenhaMedia() {
+		driver.findElement(By.id("PessoaFisica")).click();
+
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "TMedia", "TMedia");
+
+		assertTrue(driver.findElement(By.id("seguranca_senha")).isDisplayed());
+
+		String nivelSenha = driver.findElement(By.id("seguranca_senha")).getAttribute("innerText");
+		String procurarPor = "Média";
+
+		assertTrue(nivelSenha.toLowerCase().contains(procurarPor.toLowerCase()));
+	}
+
+	/*
+	 * Testando se o nivel de senha aponta alto para uma senha alta.
+	 */
+	@Test
+	void testeSenhaAlta() {
+		driver.findElement(By.id("PessoaFisica")).click();
+
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "TAlta-12", "TAlta-12");
+
+		assertTrue(driver.findElement(By.id("seguranca_senha")).isDisplayed());
+
+		String nivelSenha = driver.findElement(By.id("seguranca_senha")).getAttribute("innerText");
+		String procurarPor = "Alta";
+
+		assertTrue(nivelSenha.toLowerCase().contains(procurarPor.toLowerCase()));
+	}
+
+	/*
+	 * Testando se o checkbox está marcado logo quando a pagina é carregada.
+	 */
+	@Test
+	void testeCheckboxIniciaMarcada() {
+		driver.findElement(By.id("PessoaFisica")).click();
+
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "TAlta-12", "TAlta-12");
+
+		assertTrue(driver.findElement(By.id("email")).isSelected());
+	}
+
+	/*
+	 * Testando se é possível desmarcar o checkbox.
+	 */
+	@Test
+	void testeCheckboxDesmarca() {
+		driver.findElement(By.id("PessoaFisica")).click();
+
+		this.setUser("Fulano de Tal", "01012000", "69296495032", "8737999999", "87981999999", "ts-selenium@gmail.com",
+				"ts-selenium@gmail.com", "TAlta-12", "TAlta-12");
+
+		if (driver.findElement(By.id("email")).isSelected())
+			driver.findElement(By.id("email")).click();
+
+		assertFalse(driver.findElement(By.id("email")).isSelected());
 	}
 
 //	/*
@@ -388,7 +513,7 @@ class TestCadastroPessoaFisicaCanalTech {
 //	void testeTodosOsCamposCorreto() {
 //		driver.findElement(By.id("PessoaFisica")).click();
 //
-//		this.setUser("Fulano de Tal", "01012000", "73796018068", "8737999999", "87981999999", "testCorreto@gmail.com",
+//		this.setUser("Fulano de Tal", "01012000", "93344225057", "8737999999", "87981999999", "testCorreto@gmail.com",
 //				"testCorreto@gmail.com", "12345698", "12345698");
 //
 //		driver.findElement(By.cssSelector(".botao-commerce-img")).click();
